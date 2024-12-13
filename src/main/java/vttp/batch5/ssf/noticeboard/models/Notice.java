@@ -18,13 +18,15 @@ public class Notice {
     private String title;
 
     @Email(message="Must be in email format")
+    @NotBlank(message="Email must not be blank")
     private String poster;
 
     @FutureOrPresent(message="Must be a date in the future")
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @NotNull(message="Date must be filled up")
     private Date postDate;
 
-    @NotBlank(message="Must select at least 1 caetgory")
+    @NotBlank(message="Must select at least 1 category")
     private String categories;
 
     @NotBlank(message="Contents of the notice must not be blank")
